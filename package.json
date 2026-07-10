@@ -1,0 +1,31 @@
+{
+  "name": "aiwy-rss-reader",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/noto-sans-tc": "^5.2.10",
+    "@iconify-json/lucide": "^1.2.115",
+    "@nuxt/ui": "4.9.0",
+    "vue": "^3.5.13",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "jsdom": "^25.0.1",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3",
+    "vitest": "^4.1.9",
+    "vue-tsc": "^3.3.5"
+  }
+}

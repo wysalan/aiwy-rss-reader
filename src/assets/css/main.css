@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --font-sans: "Inter Variable", "Noto Sans TC Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* 本 app 佔滿視窗，元件內用 h-screen 佈局 */
+body {
+  margin: 0;
+}
+
+/* 所有按鈕按下時的 active 回饋：輕微縮小＋壓暗。
+   排除 disabled 與下拉選單觸發器（aria-haspopup，如分類 USelectMenu） */
+button:not([aria-haspopup]) {
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+button:active:not(:disabled):not([aria-haspopup]) {
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
+
+/* 鍵盤導航選取框：WASD 移動時用原生 focus，畫成明顯的方框 */
+[data-navi]:focus-visible {
+  outline: 2px solid var(--ui-primary);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+/* 內縮外框會被蓋掉的情況，改畫在外側才看得到：
+   輸入框／下拉選單包裝的子元素會蓋住內框；實心按鈕（如新增）背景與外框同為 primary 色會融掉 */
+[data-navi]:has(input):focus-visible,
+[data-navi]:has([aria-haspopup]):focus-visible,
+button[data-navi]:focus-visible {
+  outline-offset: 2px;
+}
+
+/* 已啟用列（bg-primary 主色底）被選到：外框改黑。起點是 text-inverted（白），
+   靠列本身的 transition-colors 自動白→黑，機制與未啟用列的黑→藍一致，免另寫 keyframes。
+   限定 div 以免命中同帶 bg-primary 的「新增」按鈕（button，維持藍框） */
+div[data-navi].bg-primary:focus-visible {
+  outline-color: #000;
+}
