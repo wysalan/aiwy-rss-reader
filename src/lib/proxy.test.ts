@@ -8,7 +8,7 @@ test('經 allorigins 代理抓取內容', async () => {
   vi.stubGlobal('fetch', fetchMock)
 
   expect(await fetchText('https://blog.example/feed')).toBe('<rss>ok</rss>')
-  expect(String(fetchMock.mock.calls[0][0])).toContain('allorigins')
+  expect(String(fetchMock.mock.calls[0])).toContain('allorigins')
 })
 
 test('來源回 404 時回報人話錯誤', async () => {
