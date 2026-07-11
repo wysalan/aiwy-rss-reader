@@ -1,19 +1,53 @@
 # aiwy-rss-reader
 
-An RSS reader built with Vue 3, Vite, Nuxt UI and Tailwind CSS.
+一款純前端的 RSS／Atom 訂閱閱讀器，介面簡潔、資料存於瀏覽器本機，無需後端伺服器。
 
-## Setup
+採用 Vue 3 + Vite + TypeScript 建置，UI 使用 Nuxt UI 4 與 Tailwind CSS v4。
+
+## 關於此專案
+
+此專案是為了滿足個人需求所打造的 Vibe Coding 成果，全程使用 Claude Code 開發。如果你覺得還不錯，歡迎 Fork 後依自己的喜好自由修改。
+
+## 特色功能
+
+- **訂閱管理**：新增／移除訂閱，可自訂顯示名稱、來源網址與圖示。
+- **分類與拖曳排序**：以分類整理訂閱，訂閱與分類皆可拖曳重新排序，跨分類拖曳時自動歸類。
+- **閱讀狀態**：追蹤已讀／未讀，支援「全部標為已讀」。
+- **收藏**：以星號收藏文章，收藏清單會保留文章連結，即使來源已移除或文章不再出現於 feed 仍可開啟原文。
+- **OPML 匯入／匯出**：與其他閱讀器互通訂閱清單。
+- **定時更新**：可設定自動輪詢間隔，於背景更新所有訂閱。
+- **CORS 代理容錯**：內建多組公開 CORS proxy，主代理失效時自動切換備援。
+- **深淺色主題**：支援自動／淺色／深色三種模式。
+- **鍵盤操作**：支援使用鍵盤執行所有操作。
+- **本機儲存**：所有資料儲存於瀏覽器 localStorage，不上傳、不需帳號。
+
+## 技術棧
+
+- **框架與路由**：Vue 3、Vue Router
+- **建置工具**：Vite 8
+- **UI 與樣式**：Nuxt UI 4、Tailwind CSS v4
+- **開發語言**：TypeScript
+- **測試**：Vitest
+- **套件管理**：pnpm
+
+## 開始使用
+
+安裝相依套件：
 
 ```bash
 pnpm install
 ```
 
-## Scripts
+## 專案指令
 
 ```bash
-pnpm dev        # start dev server
-pnpm build      # type-check + production build
-pnpm preview    # preview the production build
-pnpm typecheck  # vue-tsc type check
-pnpm test       # run tests (vitest)
+pnpm dev        # 啟動開發伺服器
+pnpm build      # 型別檢查並建置正式版
+pnpm preview    # 預覽建置後的成果
+pnpm typecheck  # 執行 vue-tsc 型別檢查
+pnpm test       # 執行測試
 ```
+
+## 授權
+
+本專案採用 [MIT 授權條款](./LICENSE)。
